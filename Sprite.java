@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package slimecraft;
+package slormcraft;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -11,7 +11,7 @@ import java.awt.Rectangle;
 
 /**
  *
- * @author jword
+ * @author 801420
  */
 public abstract class Sprite {
     private int speed;
@@ -31,13 +31,13 @@ public abstract class Sprite {
         this.color = color;
         this.bounds = new Rectangle(x, y, width, height);
     }
-    
+
     public void update() {
         this.x += this.vx;
         this.y += this.vy;
         this.bounds = new Rectangle(x, y, width, height);
     }
-    
+
     public abstract void draw(Graphics g);
 
     public int getWidth() {
@@ -59,7 +59,7 @@ public abstract class Sprite {
     public Color getColor() {
         return color;
     }
-    
+
     public boolean collide(Sprite other) {
         return this.bounds.intersects(other.bounds);
     }

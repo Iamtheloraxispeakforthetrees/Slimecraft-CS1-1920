@@ -11,11 +11,18 @@ import java.awt.Color;
  *
  * @author 801420
  */
-public class Clob extends Slime {
+public class Glob extends Slime {
     private static final int SPEED = 3;
     private static final Color COLOR = Color.RED;
-    
-    public Clob (int x, int y) {
+        
+    public Glob(int x, int y) {
         super(SPEED, x, y, COLOR);
+    }
+    
+    public Glob reproduce(Glob mate) {
+        int newX = super.getX() + (int) (Math.random() * 60 - 30);
+        int newY = super.getY() + (int) (Math.random() * 60 - 30);
+        Glob baby = new Glob(newX, newY);
+        return baby;
     }
 }
